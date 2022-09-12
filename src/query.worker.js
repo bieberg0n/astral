@@ -523,7 +523,7 @@ const methods = {
         ((idx.tag = '["p","${userPubkey}"]' AND idx.pubkey = '${peerPubkey}') OR
         (idx.tag = '["p","${peerPubkey}"]' AND idx.pubkey = '${userPubkey}')) AND
         idx.created_at <= ${until}
-      ORDER BY idx.created_at
+      ORDER BY idx.created_at DESC
       LIMIT ${limit}
     `)
     let messages = result
@@ -542,7 +542,7 @@ const methods = {
         }
         return acc
       }, [])
-    return messages
+    return messages.reverse()
   },
 
   // streamUserMessages(pubkey, callback) {

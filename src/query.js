@@ -32,6 +32,7 @@ worker.onmessage = ev => {
   }
 
   if (!success) {
+    console.log(ev)
     hub[id].reject(new Error(error))
     delete hub[id]
     return
@@ -113,6 +114,10 @@ export async function dbChats(pubkey) {
 
 export async function dbMessages(userPubkey, peerPubkey, limit = 50, until = Math.round(Date.now() / 1000)) {
   return call('dbMessages', [userPubkey, peerPubkey, limit, until])
+}
+
+export async function dbMessages2(userPubkey, peerPubkey, limit = 50, until = Math.round(Date.now() / 1000)) {
+  return call('dbMessages2', [userPubkey, peerPubkey, limit, until])
 }
 
 export async function streamUserMessages(pubkey, callback = () => { }) {
