@@ -94,6 +94,11 @@ export default {
       return `${String(date.getUTCHours()).padStart(2, '0')}:${String(date.getUTCMinutes()).padStart(2, '0')} ${this.$t('UTC')}`
     },
 
+    timeLocal(value) {
+      let date = new Date(value * 1000)
+      return `${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`
+    },
+
     interpolateMentions(text, tags) {
       const mentions = {
         profiles: [],

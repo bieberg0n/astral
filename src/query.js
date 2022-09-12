@@ -116,10 +116,6 @@ export async function dbMessages(userPubkey, peerPubkey, limit = 50, until = Mat
   return call('dbMessages', [userPubkey, peerPubkey, limit, until])
 }
 
-export async function dbMessages2(userPubkey, peerPubkey, limit = 50, until = Math.round(Date.now() / 1000)) {
-  return call('dbMessages2', [userPubkey, peerPubkey, limit, until])
-}
-
 export async function streamUserMessages(pubkey, callback = () => { }) {
   return stream('streamUserMessages', [pubkey], callback)
 }

@@ -8,7 +8,7 @@
           v-if='!isEmbeded'
           class='text-accent timestamp'
         >
-          {{timeUTC(event.created_at)}}
+          {{timeLocal(event.created_at)}}
         </div>
     <div class='flex column message-bubbles'>
       <div

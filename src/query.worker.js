@@ -526,6 +526,7 @@ const methods = {
       ORDER BY idx.created_at DESC
       LIMIT ${limit}
     `)
+    result.reverse()
     let messages = result
       .map(row => JSON.parse(row.event))
       .reduce((acc, event) => {
@@ -542,7 +543,7 @@ const methods = {
         }
         return acc
       }, [])
-    return messages.reverse()
+    return messages
   },
 
   // streamUserMessages(pubkey, callback) {
