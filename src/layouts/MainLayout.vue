@@ -24,64 +24,64 @@
         <TheSearchMenu/>
       </div>
     </div>
-    <q-page-sticky position="top-right" :offset="fabPos" id='navagation-buttons'>
-      <q-fab
-        direction="left"
-        color="accent"
-        class='no-margin no-padding z-top'
-        :model-value='true'
-        persistent
-        flat
-        padding='xs'
-        :disable="draggingFab"
-        v-touch-pan.prevent.mouse="moveFab"
-      >
-        <template #tooltip>
-          <q-tooltip>
-            click to collapse/expand or drag to move
-          </q-tooltip>
-        </template>
-        <template #icon>
-          <q-icon name='drag_indicator'/>
-        </template>
-        <template #active-icon>
-          <q-icon name='drag_indicator'/>
-        </template>
-        <q-btn
-          @click.stop="forward"
-          color="primary"
-          unelevated
-          round
-          outline
-          icon="keyboard_arrow_right"
-          :disable="draggingFab"
-        >
-          <q-tooltip>forward</q-tooltip>
-        </q-btn>
-        <q-btn
-          @click.stop="scrollToTop"
-          color="primary"
-          unelevated
-          round
-          outline
-          icon="keyboard_double_arrow_up"
-          :disable='draggingFab || $route.name === "inbox" || $route.name === "messages"'
-        >
-          <q-tooltip>scroll to top</q-tooltip>
-        </q-btn>
-        <q-btn
-          @click.stop="back"
-          color="primary"
-          unelevated
-          round
-          outline
-          icon="keyboard_arrow_left"
-          :disable="draggingFab"
-        >
-          <q-tooltip>back</q-tooltip>
-        </q-btn>
-      </q-fab>
-    </q-page-sticky>
+<!--    <q-page-sticky position="top-right" :offset="fabPos" id='navagation-buttons'>-->
+<!--      <q-fab-->
+<!--        direction="left"-->
+<!--        color="accent"-->
+<!--        class='no-margin no-padding z-top'-->
+<!--        :model-value='true'-->
+<!--        persistent-->
+<!--        flat-->
+<!--        padding='xs'-->
+<!--        :disable="draggingFab"-->
+<!--        v-touch-pan.prevent.mouse="moveFab"-->
+<!--      >-->
+<!--        <template #tooltip>-->
+<!--          <q-tooltip>-->
+<!--            click to collapse/expand or drag to move-->
+<!--          </q-tooltip>-->
+<!--        </template>-->
+<!--        <template #icon>-->
+<!--          <q-icon name='drag_indicator'/>-->
+<!--        </template>-->
+<!--        <template #active-icon>-->
+<!--          <q-icon name='drag_indicator'/>-->
+<!--        </template>-->
+<!--        <q-btn-->
+<!--          @click.stop="forward"-->
+<!--          color="primary"-->
+<!--          unelevated-->
+<!--          round-->
+<!--          outline-->
+<!--          icon="keyboard_arrow_right"-->
+<!--          :disable="draggingFab"-->
+<!--        >-->
+<!--          <q-tooltip>forward</q-tooltip>-->
+<!--        </q-btn>-->
+<!--        <q-btn-->
+<!--          @click.stop="scrollToTop"-->
+<!--          color="primary"-->
+<!--          unelevated-->
+<!--          round-->
+<!--          outline-->
+<!--          icon="keyboard_double_arrow_up"-->
+<!--          :disable='draggingFab || $route.name === "inbox" || $route.name === "messages"'-->
+<!--        >-->
+<!--          <q-tooltip>scroll to top</q-tooltip>-->
+<!--        </q-btn>-->
+<!--        <q-btn-->
+<!--          @click.stop="back"-->
+<!--          color="primary"-->
+<!--          unelevated-->
+<!--          round-->
+<!--          outline-->
+<!--          icon="keyboard_arrow_left"-->
+<!--          :disable="draggingFab"-->
+<!--        >-->
+<!--          <q-tooltip>back</q-tooltip>-->
+<!--        </q-btn>-->
+<!--      </q-fab>-->
+<!--    </q-page-sticky>-->
   </q-layout>
 </template>
 
@@ -202,7 +202,7 @@ export default defineComponent({
   width: 700px;
   max-width: 100%;
   height: auto;
-  background: $dark;
+  background: $amber-1;
   padding-bottom: 2rem;
   border-right: 2px solid $accent;
   border-left: 2px solid $accent;
@@ -211,6 +211,7 @@ export default defineComponent({
   padding: 0 .5rem;
 }
 #middle-page .q-page-container {
+  overflow-x: hidden;
   overflow-y: auto;
 }
 #bottom-drawer {

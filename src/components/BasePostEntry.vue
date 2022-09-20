@@ -37,7 +37,7 @@
       <q-list id='tribute-wrapper' class='overflow-auto flex row z-top' style='max-height: 70vh' @click.stop='focusInput'>
       </q-list>
       <div class="input-area">
-        <BaseUserAvatar :pubkey='$store.state.keys.pub' class='avatar-image' />
+<!--        <BaseUserAvatar :pubkey='$store.state.keys.pub' class='avatar-image' />-->
         <span id="input-placeholder"> {{ placeholderText }}</span>
         <div id="input-readonly-highlight" contenteditable="true" spellcheck="false"></div>
         <div
@@ -896,6 +896,7 @@ ul, li {
   border: none;
   display: block;
   margin: .3rem 0 0;
+  background: white;
 }
 .input-area::-webkit-scrollbar {
   width: 0px;

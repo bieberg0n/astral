@@ -19,7 +19,7 @@
     <div class='relative-position'>
       <div class='absolute-top flex justify-center'>
       <span
-            class='text-accent bg-dark z-top q-px-sm'
+            class='text-accent bg-amber-2 z-top q-px-sm'
             style=''
             id='current-datestamp'
           >
